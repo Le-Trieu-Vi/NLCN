@@ -86,7 +86,7 @@ const Order = () => {
   if (!orders) return <Loading />;
 
   return (
-    <div className="container mx-auto py-10 min-h-96">
+    <div className="mx-auto py-10 min-h-96">
       <div className="flex items-center justify-end space-x-4 mb-4 me-10">
         <label className="mr-2">Lọc</label>
         <select

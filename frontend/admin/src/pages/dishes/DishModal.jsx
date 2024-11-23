@@ -103,7 +103,7 @@ const DishModal = ({ closeModalAddDish, onCategoryChange, onDishAdded }) => {
                       <img
                         src={
                           category.image
-                            ? `${process.env.PUBLIC_URL}/uploads/categories/${category.image}`
+                            ? `/uploads/categories/${category.image}`
                             : "https://via.placeholder.com/256"
                         }
                         alt="Ảnh danh mục"

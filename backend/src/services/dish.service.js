@@ -107,6 +107,7 @@ export default class DishService {
             quantity: true,
           },
         },
+        prices: { orderBy: { updatedAt: 'desc' }, take: 1 },
       },
     });
   

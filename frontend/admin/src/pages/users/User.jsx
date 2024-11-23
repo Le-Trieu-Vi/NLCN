@@ -33,7 +33,7 @@ function User() {
   };
   useEffect(() => {
     fetchUsers();
-  }, [users, search]);
+  }, [search]);
 
   const handleDeleteUser = async (userId) => {
     alertService.confirm(
@@ -64,7 +64,7 @@ function User() {
 
   if (!users) return <Loading />;
   return (
-    <div className="container mx-auto py-6">
+    <div className="mx-auto py-6">
       <div className="flex justify-between mb-3 me-10">
         <SearchInput onSearch={handleSearch} />
         <button

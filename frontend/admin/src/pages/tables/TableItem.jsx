@@ -26,8 +26,8 @@ const TableItem = ({ table }) => {
             )}
         </div>
         <div
-          className={`aspect-w-1 aspect-h-1 overflow-hidden rounded-3xl bg-gray-200 lg:aspect-none group-hover:opacity-75 sm:min-h-48 min-h-40 flex items-center justify-center ${
-            table.status === "unavailable" ? "bg-sky-500/50" : "outline-none"
+          className={`aspect-w-1 aspect-h-1 overflow-hidden rounded-3xl lg:aspect-none group-hover:opacity-75 sm:min-h-48 min-h-40 flex items-center justify-center ${
+            table.status === "unavailable" ? "bg-blue-300" : "outline-none bg-gray-200"
           }`}
         >
           <h1 className="self-center text-lg font-semibold">

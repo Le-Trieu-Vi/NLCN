@@ -18,6 +18,7 @@ export default class AuthService {
       throw new ApiError(401, 'Tên đăng nhập hoặc mật khẩu không đúng');
     }
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, {
+      // expiresIn: 5,
       expiresIn: '1d',
     });
     return token;

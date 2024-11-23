@@ -51,8 +51,6 @@ class DishController {
   }
 
   async getTopDishes(req, res, next) {
-    console.log("KKK");
-    
     try {
       const dishes = await this.dishService.findTopDishes();
       res.status(200).json(dishes);

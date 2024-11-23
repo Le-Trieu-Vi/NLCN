@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../config/Api";
-import AuthService from "../../config/Api";
+import AuthService from "../../services/AuthService";
 import alertService from "../../services/AlertService";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";

@@ -60,6 +60,15 @@ export default function Header() {
             {AuthService.isAdmin() ? (
               <div className="hidden lg:flex lg:gap-x-12">
                 <button
+                  onClick={() => navigate("/statistic")}
+                  className={classNames(
+                    "text-sm font-semibold leading-6 text-gray-900",
+                    isActive("/statistic") ? "text-indigo-600" : ""
+                  )}
+                >
+                  Thống kê
+                </button>
+                <button
                   onClick={() => navigate("/table-manager")}
                   className={classNames(
                     "text-sm font-semibold leading-6 text-gray-900",

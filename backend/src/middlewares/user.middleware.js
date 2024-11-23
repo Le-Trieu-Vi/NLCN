@@ -1,4 +1,4 @@
-import { object, string, ref } from 'yup'; // Import ref from yup
+import { object, string, ref } from 'yup';
 import { ApiError } from './error.middleware.js';
 
 const createUserSchema = object({

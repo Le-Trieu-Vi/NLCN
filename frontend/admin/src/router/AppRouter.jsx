@@ -15,6 +15,7 @@ import UserUpdate from "../pages/users/UserUpdate";
 import DishUpdate from "../pages/dishes/DishUpdate";
 import OrderByUser from "../pages/orders/OrderByUser";
 import Profile from "../pages/users/Profile";
+import Statistic from "../pages/statistic/Statistic";
 import ChangePassword from "../pages/users/ChangePassword";
 import NotFound from "../pages/NotFound";
 import { AdminRoute, StaffRoute } from "./RoleRoutes";
@@ -52,6 +53,7 @@ function AppRoutes() {
       <Route path="/user/:id" element={<AdminRoute element={<UserUpdate />} />} />
       <Route path="/profile/:id" element={<Profile />} />
       <Route path="/change-password/:id" element={<ChangePassword />} />
+      <Route path="/statistic" element={<AdminRoute element={<Statistic />} />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

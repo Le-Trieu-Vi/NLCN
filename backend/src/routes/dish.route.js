@@ -5,13 +5,14 @@ import * as dishMiddleware from "../middlewares/dish.middleware.js";
 import { uploadSingle } from "../middlewares/upload.middleware.js";
 
 const dishRouter = Router();
+
+dishRouter.route("/topDishes")
+      .get(dishController.getTopDishes);
+      
 dishRouter.use(authMiddleware.authenticate);
 dishRouter.route("/")
   .get(authMiddleware.authorize(["admin", "staff"]), dishController.getAll)
   .post(authMiddleware.authorize(["admin"]), uploadSingle("image"), dishMiddleware.create, dishController.create);
-
-dishRouter.route("/topDishes")
-      .get(authMiddleware.authorize(["user"]), dishController.getTopDishes);
       
 dishRouter.route("/:id")
     .get(authMiddleware.authorize(["admin", "staff"]), dishController.getOne)

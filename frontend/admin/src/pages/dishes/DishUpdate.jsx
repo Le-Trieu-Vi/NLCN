@@ -91,7 +91,7 @@ function DishUpdate() {
       );
       setDish(response.data);
       alertService.success("Cập nhật món ăn thành công.");
-      navigate("/categories");
+      navigate("/category");
       resetForm();
       setPreviewImage(null);
     } catch (error) {

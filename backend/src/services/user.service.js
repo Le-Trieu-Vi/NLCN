@@ -49,15 +49,15 @@ export default class UserService {
     });
   }
 
-  async getAll(req) {
+  async getAll(query) {
     try {
-      const { search } = req.query;
+      const { search } = query;
       if (search) {
         return await this.prismaService.user.findMany({
           where: {
             isDeleted: false,
             role: {
-              in: ['staff', 'cashier'],
+              in: ['staff', 'cashier', 'user'],
             },
             OR: [
               { username: { contains: search } },
@@ -70,7 +70,7 @@ export default class UserService {
         where: {
           isDeleted: false,
           role: {
-            in: ['staff', 'cashier'],
+            in: ['staff', 'cashier', 'user'],
           },
         },
       });
@@ -91,11 +91,6 @@ export default class UserService {
     const { confirmPassword, ...userData } = data;
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(userData.password, salt);
-
-    if (file) {
-      const fileName = await this.uploadImage(file);
-      data.avatar = fileName;
-    }
 
     return await this.prismaService.user.create({
       data: {
@@ -130,7 +125,7 @@ export default class UserService {
     try {
       const user = await this.prismaService.user.findUnique({
         where: { id },
-        select: { password: true, avatar: true }, // Chọn thêm avatar
+        select: { password: true, avatar: true },
       });
 
       if (data.password) {
@@ -170,6 +165,8 @@ export default class UserService {
         fullname: data.fullname || user.fullname,
         avatar: data.avatar,
         password: data.password ? data.password : user.password,
+        address: data.address || user.address,
+        phone: data.phone || user.phone,
       };
 
       return await this.prismaService.user.update({

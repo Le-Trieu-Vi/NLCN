@@ -1,7 +1,7 @@
 import Api from "../config/Api";
 
 class DishService {
-  async fetchTopDish() {
+  async fetchDishTop() {
     try {
       const response = await Api.get("/dishes/topDishes");
       return response.data;

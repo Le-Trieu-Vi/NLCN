@@ -9,6 +9,7 @@ import authRouter from './src/routes/auth.route.js';
 import tableRouter from './src/routes/table.route.js';
 import categoryRouter from './src/routes/category.route.js';
 import dishRouter from './src/routes/dish.route.js';
+import statisticRoute from './src/routes/statistic.route.js'
 import orderRouter from './src/routes/order.route.js';
 import orderDetailRouter from './src/routes/orderDetail.route.js';
 import cartRouter from './src/routes/cart.route.js';
@@ -35,6 +36,7 @@ app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/tables', tableRouter);
 app.use('/api/categories', categoryRouter);
+app.use('/api/statistics', statisticRoute);
 app.use('/api/dishes', dishRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/order-details', orderDetailRouter);

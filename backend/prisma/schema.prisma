@@ -69,7 +69,7 @@ model Order {
   id           String        @id @default(uuid()) @db.VarChar(36)
   createdAt    DateTime      @default(now()) @map("created_at")
   status       String        @default("pending") @db.VarChar(100)
-  total        Int           @default(0)
+  total        BigInt        @default(0)
   isDeleted    Boolean       @default(false) @map("is_deleted")
   orderDetails OrderDetail[]
 

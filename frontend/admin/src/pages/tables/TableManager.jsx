@@ -73,7 +73,7 @@ function TableManager() {
   };
 
   return (
-    <div className="min-h-96 container mx-auto py-6">
+    <div className="min-h-96 mx-auto py-6">
       {tables ? (
         <>
           <div className="flex justify-end mb-3 me-10">

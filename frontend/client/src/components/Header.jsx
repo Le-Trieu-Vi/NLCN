@@ -82,28 +82,32 @@ export default function Header() {
               >
                 Danh sách món ăn
               </button>
-              <button
-                onClick={() => {
-                  user && navigate(`/order-user/${user.id}`);
-                }}
-                className={classNames(
-                  "text-sm font-semibold leading-6",
-                  isActive("/order") ? "text-deep-orange-400" : "text-gray-900"
-                )}
-              >
-                Lịch sử đặt hàng
-              </button>
-              <button
-                onClick={() => {
-                  user && navigate(`/profile/${user.id}`);
-                }}
-                className={classNames(
-                  "text-sm font-semibold leading-6",
-                  isActive("/profile") ? "text-deep-orange-400" : "text-gray-900"
-                )}
-              >
-                Trang cá nhân
-              </button>
+              {AuthService.isAuthenticated() && (
+                <button
+                  onClick={() => {
+                    user && navigate(`/order-user/${user.id}`);
+                  }}
+                  className={classNames(
+                    "text-sm font-semibold leading-6",
+                    isActive("/order") ? "text-deep-orange-400" : "text-gray-900"
+                  )}
+                >
+                  Lịch sử đặt hàng
+                </button>
+              )}
+              {AuthService.isAuthenticated() && (
+                <button
+                  onClick={() => {
+                    user && navigate(`/profile/${user.id}`);
+                  }}
+                  className={classNames(
+                    "text-sm font-semibold leading-6",
+                    isActive("/profile") ? "text-deep-orange-400" : "text-gray-900"
+                  )}
+                >
+                  Trang cá nhân
+                </button>
+              )}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               {AuthService.isAuthenticated() ? (

@@ -19,7 +19,7 @@ class UserController {
 
   async getAll(req, res, next) {
     try {
-      const users = await this.userService.getAll(req);
+      const users = await this.userService.getAll(req.query);
       res.status(200).json(users);
     } catch (error) {
       next(new ApiError(error.status || 500, error.message || 'Failed to get users'));

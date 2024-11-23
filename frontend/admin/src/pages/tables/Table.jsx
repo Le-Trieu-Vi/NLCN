@@ -34,7 +34,7 @@ function Table() {
 
   useEffect(() => {
     fetchTables();
-  }, [location.search, status, tables]);
+  }, [location.search, status]);
 
   if (!tables) return <Loading />;
 
